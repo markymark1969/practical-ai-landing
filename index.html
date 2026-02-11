@@ -245,11 +245,26 @@
         <div class="container">
             <h2>🎯 Download the C.R.I.S.P.E. Method Cheat Sheet</h2>
             <p>Get the exact framework I use to evaluate and implement AI tools in my business. Save hours of research and avoid costly mistakes.</p>
-            <form class="email-form" name="email-capture" method="POST" data-netlify="true" action="success.html">
+            <form class="email-form" name="email-capture" method="POST" data-netlify="true">
                 <input type="text" name="firstName" class="form-input" placeholder="Your first name" required>
                 <input type="email" name="email" class="form-input" placeholder="Your email address" required>
                 <button type="submit" class="email-button">Get Free Access</button>
             </form>
+            <script>
+                document.querySelector('form[name="email-capture"]').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    var form = this;
+                    fetch('/', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: new URLSearchParams(new FormData(form)).toString()
+                    }).then(function() {
+                        window.location.href = 'success.html';
+                    }).catch(function() {
+                        window.location.href = 'success.html';
+                    });
+                });
+            </script>
         </div>
     </section>
 
