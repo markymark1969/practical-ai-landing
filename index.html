@@ -20,37 +20,37 @@
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 80px 0;
+            padding: 60px 0;
             text-align: center;
         }
         header h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
             font-weight: 700;
         }
         header p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             opacity: 0.95;
             max-width: 600px;
-            margin: 20px auto;
+            margin: 15px auto;
         }
         .hero-photo {
-            width: 140px;
-            height: 140px;
+            width: 120px;
+            height: 120px;
             border-radius: 12px;
             object-fit: cover;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         .cta-button {
             display: inline-block;
             background: #fff;
             color: #667eea;
-            padding: 15px 40px;
+            padding: 12px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            margin-top: 30px;
+            margin-top: 20px;
             transition: transform 0.2s, box-shadow 0.2s;
         }
         .cta-button:hover {
@@ -58,33 +58,41 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         section {
-            padding: 60px 0;
+            padding: 50px 0;
         }
         .features {
             background: white;
         }
         .features h2 {
             text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 50px;
+            font-size: 1.8rem;
+            margin-bottom: 40px;
             color: #2d3748;
         }
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        @media (min-width: 768px) {
+            .feature-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            header h1 { font-size: 3rem; }
+            header p { font-size: 1.3rem; }
+            .hero-photo { width: 140px; height: 140px; }
         }
         .feature {
             text-align: center;
-            padding: 30px;
+            padding: 20px;
         }
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
         .feature h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
             color: #2d3748;
         }
         .youtube-section {
@@ -93,26 +101,26 @@
             text-align: center;
         }
         .youtube-section h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
         }
         .youtube-button {
             display: inline-block;
             background: white;
             color: #ff0000;
-            padding: 15px 40px;
+            padding: 12px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            margin-top: 20px;
+            margin-top: 15px;
         }
         .about {
             background: white;
         }
         .about h2 {
             text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 30px;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
         }
         .about-content {
             max-width: 800px;
@@ -122,51 +130,59 @@
             color: #555;
         }
         .about-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
             object-fit: cover;
-            margin-bottom: 30px;
-            border: 4px solid #667eea;
+            margin-bottom: 25px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         .email-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-align: center;
-            padding: 60px 0;
+            padding: 50px 0;
         }
         .email-section h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            padding: 0 15px;
         }
         .email-section p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             opacity: 0.95;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            padding: 0 15px;
         }
         .email-form {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            max-width: 500px;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 400px;
             margin: 0 auto;
+            padding: 0 20px;
         }
-        .email-input {
+        @media (min-width: 768px) {
+            .email-form {
+                flex-direction: row;
+                flex-wrap: wrap;
+                max-width: 600px;
+            }
+        }
+        .form-input {
             flex: 1;
-            min-width: 250px;
-            padding: 15px 20px;
+            min-width: 200px;
+            padding: 12px 20px;
             border: none;
             border-radius: 50px;
             font-size: 1rem;
             outline: none;
         }
         .email-button {
-            padding: 15px 30px;
+            padding: 12px 25px;
             background: #ff6b6b;
             color: white;
             border: none;
@@ -184,15 +200,11 @@
             background: #2d3748;
             color: white;
             text-align: center;
-            padding: 40px 0;
+            padding: 30px 0;
         }
         footer a {
             color: #90cdf4;
             text-decoration: none;
-        }
-        @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
-            header p { font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -233,8 +245,9 @@
         <div class="container">
             <h2>🎯 Download the C.R.I.S.P.E. Method Cheat Sheet</h2>
             <p>Get the exact framework I use to evaluate and implement AI tools in my business. Save hours of research and avoid costly mistakes.</p>
-            <form class="email-form" name="email-capture" method="POST" data-netlify="true">
-                <input type="email" name="email" class="email-input" placeholder="Enter your email address" required>
+            <form class="email-form" name="email-capture" method="POST" data-netlify="true" action="/success">
+                <input type="text" name="firstName" class="form-input" placeholder="Your first name" required>
+                <input type="email" name="email" class="form-input" placeholder="Your email address" required>
                 <button type="submit" class="email-button">Get Free Access</button>
             </form>
         </div>
