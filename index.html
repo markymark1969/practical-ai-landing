@@ -130,6 +130,56 @@
             border: 4px solid #667eea;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
+        .email-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+        .email-section h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .email-section p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .email-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .email-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+        .email-button {
+            padding: 15px 30px;
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .email-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
         footer {
             background: #2d3748;
             color: white;
@@ -176,6 +226,17 @@
                     <p>Every video shows real examples from real businesses. No computer science degree required — just a willingness to learn.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="email-section">
+        <div class="container">
+            <h2>🎯 Download the C.R.I.S.P.E. Method Cheat Sheet</h2>
+            <p>Get the exact framework I use to evaluate and implement AI tools in my business. Save hours of research and avoid costly mistakes.</p>
+            <form class="email-form" name="email-capture" method="POST" data-netlify="true">
+                <input type="email" name="email" class="email-input" placeholder="Enter your email address" required>
+                <button type="submit" class="email-button">Get Free Access</button>
+            </form>
         </div>
     </section>
 
