@@ -95,6 +95,78 @@
             margin-bottom: 12px;
             color: #2d3748;
         }
+        .email-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+        .email-section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            padding: 0 15px;
+        }
+        .email-section p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 15px;
+        }
+        .download-box {
+            background: white;
+            color: #333;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        .form-row {
+            margin-bottom: 15px;
+        }
+        .form-input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-input:focus {
+            border-color: #667eea;
+        }
+        .download-button {
+            display: inline-block;
+            width: 100%;
+            padding: 15px 25px;
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .download-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .hidden {
+            display: none;
+        }
+        .success-message {
+            background: #48bb78;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
         .youtube-section {
             background: #ff0000;
             color: white;
@@ -137,65 +209,6 @@
             margin-bottom: 25px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
-        .email-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 50px 0;
-        }
-        .email-section h2 {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
-            padding: 0 15px;
-        }
-        .email-section p {
-            font-size: 1.1rem;
-            opacity: 0.95;
-            margin-bottom: 25px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 15px;
-        }
-        .email-form {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        @media (min-width: 768px) {
-            .email-form {
-                flex-direction: row;
-                flex-wrap: wrap;
-                max-width: 600px;
-            }
-        }
-        .form-input {
-            flex: 1;
-            min-width: 200px;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            outline: none;
-        }
-        .email-button {
-            padding: 12px 25px;
-            background: #ff6b6b;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .email-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
         footer {
             background: #2d3748;
             color: white;
@@ -214,7 +227,7 @@
             <img src="mark-headshot.jpg" alt="Mark - Practical AI" class="hero-photo">
             <h1>Practical AI</h1>
             <p>AI made simple for business owners 40+. No jargon, no fluff — just practical ways to save time, cut costs, and grow your business with artificial intelligence.</p>
-            <a href="#youtube" class="cta-button">Watch on YouTube</a>
+            <a href="#download" class="cta-button">Get Free Cheat Sheet</a>
         </div>
     </header>
 
@@ -241,30 +254,26 @@
         </div>
     </section>
 
-    <section class="email-section">
+    <section class="email-section" id="download">
         <div class="container">
             <h2>🎯 Download the C.R.I.S.P.E. Method Cheat Sheet</h2>
             <p>Get the exact framework I use to evaluate and implement AI tools in my business. Save hours of research and avoid costly mistakes.</p>
-            <form class="email-form" name="email-capture" method="POST" data-netlify="true">
-                <input type="text" name="firstName" class="form-input" placeholder="Your first name" required>
-                <input type="email" name="email" class="form-input" placeholder="Your email address" required>
-                <button type="submit" class="email-button">Get Free Access</button>
-            </form>
-            <script>
-                document.querySelector('form[name="email-capture"]').addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    var form = this;
-                    fetch('/', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                        body: new URLSearchParams(new FormData(form)).toString()
-                    }).then(function() {
-                        window.location.href = 'success.html';
-                    }).catch(function() {
-                        window.location.href = 'success.html';
-                    });
-                });
-            </script>
+            
+            <div class="download-box">
+                <form name="download-form" method="POST" data-netlify="true">
+                    <div class="form-row">
+                        <input type="text" name="firstName" class="form-input" placeholder="Your first name" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="email" name="email" class="form-input" placeholder="Your email address" required>
+                    </div>
+                    <button type="submit" class="download-button">📥 Get Instant Access</button>
+                </form>
+                <div id="download-link" class="hidden" style="margin-top: 20px;">
+                    <a href="crispe-method-cheatsheet.pdf" download class="download-button">📄 Click to Download PDF</a>
+                    <p style="margin-top: 15px; color: #666; font-size: 0.9rem;">Check your email for a backup copy!</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -292,5 +301,27 @@
             <p>Contact: <a href="mailto:mark@mrlenterprise.com">mark@mrlenterprise.com</a></p>
         </div>
     </footer>
+
+    <script>
+        document.querySelector('form[name="download-form"]').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var form = this;
+            var formData = new FormData(form);
+            
+            // Submit to Netlify
+            fetch('/', {
+                method: 'POST',
+                body: formData
+            }).then(function() {
+                // Hide form, show download
+                form.style.display = 'none';
+                document.getElementById('download-link').classList.remove('hidden');
+            }).catch(function() {
+                // Even if error, show download
+                form.style.display = 'none';
+                document.getElementById('download-link').classList.remove('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
